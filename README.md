@@ -39,25 +39,63 @@ During authentication, the extension:
 
 No sensitive data or credentials are stored or transmitted.
 
-## Installation
+## 📥 Download the Extension
 
-### Download the extension
-
-Download the prebuilt extension JAR from the Releases page:
-
-guacamole-afnsec-threat-intel.jar
-
-
-#### Install the extension
-
-Copy the JAR into:
+Clone the repository
 
 ```bash
-/etc/guacamole/extensions/
+git clone https://github.com/AFNSec/guacamole-afnsec-threat-intel.git
 ```
----
 
-### Configure Guacamole
+That will create a local folder:
+
+afnsec-guacamole-extensions/
+
+
+Move into the specific extension directory
+```bash
+cd guacamole-afnsec-threat-intel/build/v1.0.0
+```
+
+Now you’ll see:
+
+```cli
+guacamole-afnsec-threat-intel.jar
+guacamole-afnsec-threat-intel.SHA256
+README.md
+```
+
+🔐 3. Verify checksum
+
+```bash
+sha256sum -c guacamole-afnsec-threat-intel.SHA256
+```
+
+Expected output:
+
+guacamole-afnsec-threat-intel.jar: OK
+
+
+If you see “OK,” your file is valid and unmodified.
+
+📦 Install the Extension
+
+Copy the verified JAR into Guacamole’s extension directory:
+
+```bash
+sudo install -m 0644 guacamole-afnsec-threat-intel.jar /etc/guacamole/extensions/
+```
+
+🔒 Set Permissions
+
+Make sure Tomcat (or the Guacamole web service) can read the file:
+
+```bash
+sudo chown root:tomcat /etc/guacamole/extensions/guacamole-afnsec-threat-intel.jar
+sudo chmod 0644 /etc/guacamole/extensions/guacamole-afnsec-threat-intel.jar
+```
+
+⚙️ Configure guacamole.properties
 
 Add the required AFNSec settings to guacamole.properties (see "guacamole.properties.example" for more):
 
@@ -69,7 +107,7 @@ A full example is included in this repository:
 
 ---
 
-### Restart services
+🔁 Restart Guacamole Services
 
 ```bash
 sudo systemctl restart tomcat9
@@ -91,11 +129,17 @@ See the full [LICENSE](./LICENSE).
 
 ---
 
-## 🧠 Support & Security
+🧠 Support & Security
 
-- **Email:** [info@afnsec.com](mailto:info@afnsec.com)
+📞 Support
 
-Please report security issues privately to the email above.
+For support:
+
+Email: info@afnsec.com
+
+Security issues:
+
+Email: secops@afnsec.com
 
 ---
 

@@ -18,7 +18,6 @@ This extension provides a simple, API driven layer of protection against credent
 |------------|--------------|------------------|----------|
 | **guacamole-afnsec-threat-intel** | Provide IP reputation and Geo blocking. | 1.5+| 1.0.0 |
 
-See: [/README.md`](./README.md)
 
 ## Features
 

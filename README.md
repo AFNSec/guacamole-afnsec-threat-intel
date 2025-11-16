@@ -103,5 +103,3 @@ Please report security issues privately to the email above.
 
 AFNSec intel provides global IP reputation, OSINT correlation, and enforcement integrations for securing authentication flows and public facing systems.
 
-More information: https://intel.afnsec.com
-

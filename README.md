@@ -1,4 +1,4 @@
-# 🛡️ AFNSec Guacamole Threat Intelligence Extension
+# 🛡️ AFNSec Guacamole Threat Intelligence Extension (BETA)
 
 Official binary releases of proprietary **AFNSec** extensions for [Apache Guacamole](https://guacamole.apache.org/).  
 These add advanced features and customization in Apache Guacamole.
@@ -65,7 +65,7 @@ A full example is included in this repository:
 
  See: [`/guacamole.properties.example](./guacamole.properties.example)
 
- Api key can be gotten at https://protal.afnsec.com
+ Visit https://protal.afnsec.com to get API Key
 
 ---
 

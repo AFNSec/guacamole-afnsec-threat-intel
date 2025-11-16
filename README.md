@@ -1,9 +1,24 @@
-# AFNSec Guacamole Reputation Extension
+# 🛡️ AFNSec Guacamole Threat Intelligence Extension
 
-The AFNSec Intel Reputation Extension adds real time IP reputation checks and optional GEO policy enforcement to Apache Guacamole.  
+Official binary releases of proprietary **AFNSec** extensions for [Apache Guacamole](https://guacamole.apache.org/).  
+These add advanced features and customization in Apache Guacamole.
+---
+
+## 📘 Overview
+
+The AFNSec Intel Reputation Extension adds real time IP reputation checks and optional GEO policy enforcement to Apache Guacamole. 
+
 It allows Guacamole to call the AFNSec Threat Intelligence API during authentication and block sign ins from malicious or suspicious sources.
 
-This extension provides a simple, API driven layer of protection against credential stuffing, brute force attempts, and abusive remote access behavior.
+This extension provides a simple, API driven layer of protection against credential stuffing, brute force attempts(honeypot hashed password only), and abusive remote access behavior.
+
+## 📦 Current Release
+
+| Extension | Description | Guacamole Version | Release |
+|------------|--------------|------------------|----------|
+| **guacamole-afnsec-threat-intel** | Provide IP reputation and Geo blocking. | 1.5+| 1.0.0 |
+
+See: [`/guacamole-afnsec-threat-intel/README.md`](./guacamole-afnsec-threat-intel/README.md)
 
 ## Features
 
@@ -13,7 +28,6 @@ This extension provides a simple, API driven layer of protection against credent
 • AFNSec styled block screen when a sign in is denied  
 • Simple configuration through guacamole.properties  
 • Compatible with Apache Guacamole 1.5.x to 1.6.x  
-• No local scoring logic. All verdicts come from AFNSec
 
 ## How it works
 
@@ -28,81 +42,67 @@ No sensitive data or credentials are stored or transmitted.
 
 ## Installation
 
-### 1. Download the extension
+### Download the extension
 
 Download the prebuilt extension JAR from the Releases page:
 
 guacamole-afnsec-threat-intel.jar
 
 
-### 2. Install the extension
+#### Install the extension
 
 Copy the JAR into:
 
-
-
+```bash
 /etc/guacamole/extensions/
+```
+---
 
+### Configure Guacamole
 
-### 3. Configure Guacamole
-
-Add the required AFNSec settings to guacamole.properties:
-
-```properties
-afnsec.intel.api_key=YOUR_API_KEY
-afnsec.intel.api_url=https://api.afnsec.com/api/v1
-afnsec.intel.mode=reputation
-afnsec.geo.mode=off
-
+Add the required AFNSec settings to guacamole.properties (see "guacamole.properties.example" for more):
 
 A full example is included in this repository:
 
-guacamole.properties.example
+ See: [`/guacamole-afnsec-threat-intel/guacamole.properties.example](./guacamole-afnsec-threat-intel/guacamole.properties.example)
 
-4. Restart services
-sudo systemctl restart guacd
+ Api key can be gotten at https://protal.afnsec.com
+
+---
+
+### Restart services
+
+```bash
 sudo systemctl restart tomcat9
+```
 
-Configuration options
-Property	Description
-afnsec.intel.api_key	Your AFNSec API key (required)
-afnsec.intel.api_url	AFNSec API endpoint
-afnsec.intel.mode	reputation, geo, or both
-afnsec.geo.mode	off, allow, or deny
-afnsec.geo.countries	Comma separated list of ISO country codes
 
-Password reputation checks are optional and only used when configured.
-
-Block screen
-
-When a login is denied, Guacamole shows an AFNSec styled notification that includes:
-
-• Client IP
-• Reason for denial
-• Request ID
-• Timestamp
-
-The UI reveals no sensitive internal information.
-
-Development
-
-The extension is written using:
-
-• Java 11+
-• Apache Maven
-• Guacamole extension APIs
+Note: Password reputation checks are optional and only used when configured.
 
 Source code lives in:
 
 src/main/java/com/afnsec/intel
 
-License
+## 🧾 License
 
-See the LICENSE file included in this repository.
+This software is **free for personal and internal organizational use only**.  
+Redistribution, resale, or modification are **not permitted**.
 
-About AFNSec
+See the full [LICENSE](./LICENSE).
 
-AFNSec provides global IP reputation, OSINT correlation, and enforcement integrations for securing authentication flows and public facing systems.
+---
+
+## 🧠 Support & Security
+
+- **Email:** [info@afnsec.com](mailto:info@afnsec.com)
+
+Please report security issues privately to the email above.
+
+---
+
+© 2025 **AFNSec** — All rights reserved.
+
+AFNSec intel provides global IP reputation, OSINT correlation, and enforcement integrations for securing authentication flows and public facing systems.
 
 More information: https://intel.afnsec.com
 

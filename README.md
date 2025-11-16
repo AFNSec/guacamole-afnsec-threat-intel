@@ -39,7 +39,7 @@ During authentication, the extension:
 
 No sensitive data or credentials are stored or transmitted.
 
-## 📥 Download the Extension
+📥 Download the Extension
 
 Clone the repository
 
@@ -65,7 +65,7 @@ guacamole-afnsec-threat-intel.SHA256
 README.md
 ```
 
-🔐 3. Verify checksum
+🔐 Verify checksum
 
 ```bash
 sha256sum -c guacamole-afnsec-threat-intel.SHA256

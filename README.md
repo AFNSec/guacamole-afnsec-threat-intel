@@ -63,7 +63,7 @@ Add the required AFNSec settings to guacamole.properties (see "guacamole.propert
 
 A full example is included in this repository:
 
- See: [`/guacamole-afnsec-threat-intel/guacamole.properties.example](./guacamole-afnsec-threat-intel/guacamole.properties.example)
+ See: [`/guacamole.properties.example](./guacamole.properties.example)
 
  Api key can be gotten at https://protal.afnsec.com
 

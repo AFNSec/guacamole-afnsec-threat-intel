@@ -68,7 +68,7 @@ README.md
 🔐 Verify checksum
 
 ```bash
-sha256sum -c guacamole-afnsec-threat-intel.SHA256
+sha256sum -c guacamole-afnsec-threat-intel.jar-SHA256
 ```
 
 Expected output:
